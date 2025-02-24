@@ -12,3 +12,4 @@ D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\Prac
 D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.pdb
 D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
 D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\ref\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.sourcelink.json
