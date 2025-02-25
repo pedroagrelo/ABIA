@@ -20,11 +20,11 @@ public abstract class AlgoritmoDeBusqueda
     //Método de búsqueda general
     public Solucion? Busqueda(Solucion solucionInicial, Func<Solucion, bool> criterioParada,
                                Func<Solucion, List<Solucion>> obtenerVecinos, Func<Solucion, Solucion, int> calculoCoste,
-                               Func<Solucion, int>? calculoHeuristica = null) 
+                               out int revisados,Func<Solucion, int>? calculoHeuristica = null) 
     {
         ListaCandidatos.Anhadir(solucionInicial, 0); //coste inicial 0
         Dictionary<string, int> vistos = new(); //Diccionario con nodos vistos
-        int revisados = 0;  //Nº de nodos revisados
+        revisados = 0;  //Nº de nodos revisados
 
         while (ListaCandidatos.Contar > 0) //Mientras haya candidatos
         {
