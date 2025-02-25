@@ -155,3 +155,18 @@ Igual que al implementar búsqueda en anchura, ambos algoritmos **funcionan exac
 - El algoritmo avanza **más rápido** porque **no hay que realizar ninguna operación entre prioridades**.
 
 ---
+## 🔍 **Diferencias de complejidad**
+
+| Algoritmo                                | Estructura de datos usada           | `Push()`  | `Pop()`  | Complejidad total en el peor caso (O) |
+|------------------------------------------|-------------------------------------|-----------|----------|----------------------------------------|
+| **Búsqueda en Profundidad**              | `Stack<Solucion>` (LIFO)           | **O(1)**  | **O(1)** | **O(b^d)**                             |
+| **AEstrella modificado**| `PriorityQueue<Solucion, int>`     | **O(log n)** | **O(log n)** | **O(b^d log(b^d))**                    |
+
+---
+
+### **Conclusión:**
+- **Búsqueda en Profundidad** usando `Stack<Solucion>` es **más eficiente** porque su complejidad es menor (**O(b^d)** frente a **O(b^d log(b^d))**).
+- **No realiza operaciones innecesarias**, ya que `Stack` solo inserta y extrae en **O(1)**, mientras que `PriorityQueue` sigue ordenando los nodos internamente.
+- La solución es más rápida, sin retrasos causados por reordenamientos internos.
+
+Por estas razones, **la implementación con `Stack<Solucion>` es la mejor solución.**

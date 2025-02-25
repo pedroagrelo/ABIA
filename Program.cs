@@ -58,7 +58,7 @@ class Program
             */
             //Inicio de Búsqueda en Profundidad
             BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
-            Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados);
+            Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
 
 
             if (revisados > 1500 )
