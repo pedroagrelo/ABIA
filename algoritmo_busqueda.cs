@@ -59,25 +59,11 @@ public class AEstrella : AlgoritmoDeBusqueda
     public AEstrella() : base(new ColaDePrioridad()) {} // Inicializamos con cola de prioridad vacia
     public override int CalculoDePrioridad(Solucion nodoInfo, Func<Solucion, int>? calculoHeuristica = null)
     {
-        // Si no se proporciona una heurística, solo devuelve el coste
-        if (calculoHeuristica == null)
-        {
-            return nodoInfo.Coste;  
-        }
-        // Si hay una heurística, suma el coste acumulado y la heurística
-        return nodoInfo.Coste + calculoHeuristica(nodoInfo);
+        return 0; //En profundidad no hay prioridades
     }
 
 }
 
-public class BusquedaEnProfundidad : AlgoritmoDeBusqueda
-{
-    public BusquedaEnProfundidad() : base(new PiladeCandidatos()) {} // Inicializamos busqueda en profundidad con pila vacía
-    public override int CalculoDePrioridad(Solucion nodoInfo, Func<Solucion, int>? calculoHeuristica = null)
-    {
-        return 0; // En Búqueda en profundidad no hay heurística 
-    }
-}
 
 
 

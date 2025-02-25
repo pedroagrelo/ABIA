@@ -48,14 +48,14 @@ class Program
             return true;
         }
 
-        /*Inicio de la busqueda con A*
+        /*//Inicio de la busqueda con A* */
         AEstrella algoritmoAEstrella = new AEstrella();
         Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, CalculoHeuristica);
-        */
-        //Inicio de Búsqueda en Profundidad
+        
+        /*//Inicio de Búsqueda en Profundidad
         BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
         Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste);
-
+*/
 
         if (solucionFinal != null)
         {
