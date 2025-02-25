@@ -6,28 +6,29 @@
 
 La primera manera que tenemos de modificar el código para que se resuelva por **búsqueda en anchura (BFS)** es modificando el algoritmo `AEstrella`, el cual debe tener la siguiente forma:
 
-#### ✅ 1. Definir la función `CalculoDePrioridad()`
+####  1. Definir la función `CalculoDePrioridad()`
 
 - Se deben establecer:
   - **h(n) = 0** → Heurística nula.
   - **g(n) = 1** → Coste uniforme para cada movimiento.
-
+  
 Esto ya estaba implementado de esta forma, pero es clave para que el algoritmo se comporte como una búsqueda en anchura, ya que no se realiza ninguna estimación heurística y todos los movimientos tienen el mismo coste.
 
 ---
 
-#### ✅ 2. Convertir la `ColaDePrioridad` en una cola FIFO
+####  2. Convertir la `ColaDePrioridad` en una cola FIFO
 
 - La `ColaDePrioridad` debe comportarse como una **cola FIFO (First In, First Out)**.
 - Para lograrlo:
   - Se añadió un **contador `orden`** dentro de la clase `ColaDePrioridad` para asegurar el comportamiento FIFO en caso de empate en la prioridad (`f(n)`).
   - Esto garantiza que, cuando dos nodos tengan la misma prioridad, se extraerán en el **orden en que fueron añadidos**.
 
-##### 📌 **Modificación clave en `PriorityQueue`:**
+#####  **Modificación clave en `PriorityQueue`:**
 
 ```csharp
-cp.Enqueue(entrada, prioridad * 10000 + entrada.orden);
+cp.Enqueue(entrada, prioridad + entrada.orden);
 ```
+`prioridad` representa f(n) f(n) = g(n) + h(n). Donde la profundidad es igual al coste ya que h(n) = 0 y a su vez g(n) = f(n) por tando prioridad y profundidad son iguales. 
 
 
 La segunda manera de afrontar el problema es enfocarlo propiamente como **búsqueda en anchura**. Lo hicimos del siguiente modo:
@@ -164,9 +165,31 @@ Igual que al implementar búsqueda en anchura, ambos algoritmos **funcionan exac
 
 ---
 
+## **Resultados obtenidos**
+
+Dado que ambos algoritmos encuentran la misma solución, comparamos el número de nodos evaluados por cada valor de `N`:
+
+
+N = 4  reinas
+Nodos evaluados: 155
+Coordenadas: [(0, 2), (1, 0), (2, 3), (3, 1)]
+
+N = 5  reinas
+Nodos evaluados: 451
+Coordenadas: [(0, 4), (1, 2), (2, 0), (3, 3), (4, 1)]
+
+N = 6  reinas
+La solución ya tiene más de 1500 nodos evaluados.
+
+```
+**Ambos algoritmos encuentran la misma solución, pero la búsqueda en anchura lo hace más rápido ya que es menos compleja.** 🚀
+``` 
 ### **Conclusión:**
+Pese a que ambas opciones devuelven exactamente los mismos resultados:
 - **Búsqueda en Profundidad** usando `Stack<Solucion>` es **más eficiente** porque su complejidad es menor (**O(b^d)** frente a **O(b^d log(b^d))**).
 - **No realiza operaciones innecesarias**, ya que `Stack` solo inserta y extrae en **O(1)**, mientras que `PriorityQueue` sigue ordenando los nodos internamente.
 - La solución es más rápida, sin retrasos causados por reordenamientos internos.
 
 Por estas razones, **la implementación con `Stack<Solucion>` es la mejor solución.**
+
+-De entre las cuatro alternativas probadas, la mejor es la Búsqueda en Profundidad usando una pila LIFO, pues es la que explora un menor número de nodos que Búsqueda en Anchura y la complejidad es menor a la Búsqueda en Profundidad modificando la cola de prioridad.

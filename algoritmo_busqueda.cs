@@ -34,7 +34,6 @@ public abstract class AlgoritmoDeBusqueda
 
             if (criterioParada(actual)) //Si se cumple el criterio se devuelve la solucion
             {
-                Console.WriteLine($"Nodos evaluados: {revisados}");
                 return actual;
             }
 
