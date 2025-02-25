@@ -1,0 +1,70 @@
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.exe
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.deps.json
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.runtimeconfig.json
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.pdb
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.GeneratedMSBuildEditorConfig.editorconfig
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.AssemblyInfoInputs.cache
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.AssemblyInfo.cs
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.csproj.CoreCompileInputs.cache
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\refint\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.pdb
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\practicasemana1\PracticaSemana1\obj\Debug\net8.0\ref\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.exe
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.deps.json
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.runtimeconfig.json
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\bin\Debug\net8.0\PracticaSemana1.pdb
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.GeneratedMSBuildEditorConfig.editorconfig
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.AssemblyInfoInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.AssemblyInfo.cs
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.csproj.CoreCompileInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\refint\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.pdb
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1\obj\Debug\net8.0\ref\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\bin\Debug\net8.0\PracticaSemana1.exe
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\bin\Debug\net8.0\PracticaSemana1.deps.json
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\bin\Debug\net8.0\PracticaSemana1.runtimeconfig.json
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\bin\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\bin\Debug\net8.0\PracticaSemana1.pdb
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.GeneratedMSBuildEditorConfig.editorconfig
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.AssemblyInfoInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.AssemblyInfo.cs
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.csproj.CoreCompileInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\refint\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.pdb
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
+D:\Escritorio\ALGIA SEMANA 1\P1\PracticaSemana1PedroyHugo\obj\Debug\net8.0\ref\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\bin\Debug\net8.0\PracticaSemana1.exe
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\bin\Debug\net8.0\PracticaSemana1.deps.json
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\bin\Debug\net8.0\PracticaSemana1.runtimeconfig.json
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\bin\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\bin\Debug\net8.0\PracticaSemana1.pdb
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.GeneratedMSBuildEditorConfig.editorconfig
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.AssemblyInfoInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.AssemblyInfo.cs
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.csproj.CoreCompileInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\refint\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.pdb
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo\obj\Debug\net8.0\ref\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\bin\Debug\net8.0\PracticaSemana1.exe
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\bin\Debug\net8.0\PracticaSemana1.deps.json
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\bin\Debug\net8.0\PracticaSemana1.runtimeconfig.json
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\bin\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\bin\Debug\net8.0\PracticaSemana1.pdb
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.GeneratedMSBuildEditorConfig.editorconfig
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.AssemblyInfoInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.AssemblyInfo.cs
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.csproj.CoreCompileInputs.cache
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\refint\PracticaSemana1.dll
+d:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.pdb
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
+D:\Escritorio\ALGIA SEMANA 1\P1\Semana1H.Garabatos_P.Agrelo\Semana1H.Garabatos_P.Agrelo_anchura_aestrellaCOLA\obj\Debug\net8.0\ref\PracticaSemana1.dll
