@@ -51,6 +51,7 @@ public abstract class AlgoritmoDeBusqueda
     }
 }
 
+
 public class AEstrella : AlgoritmoDeBusqueda
 {
     public AEstrella() : base(new ColaDePrioridad()) {} // Inicializamos con cola de prioridad vacia

@@ -17,7 +17,24 @@ class Program
 
             int CalculoCoste(Solucion solucionActual, Solucion nuevaSolucion) => 1; // Coste uniforme de 1 para cada movimiento
 
-            int CalculoHeuristica(Solucion solucionActual) => 0; // Heurística 0
+            int CalculoHeuristica(Solucion solucionActual)
+            {
+                int conflictos = 0;
+                int[] tablero = solucionActual.ObtenerEstado();
+                int n = tablero.Length;
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        if (tablero[i] == tablero[j] || Math.Abs(tablero[i] - tablero[j]) == Math.Abs(i - j))
+                        {
+                            conflictos++;
+                        }
+                    }
+                }
+                return conflictos;
+            }
 
             List<Solucion> ObtenerVecinos(Solucion solucionActual) //Posibles posiciones de la siguiente reina
             {
@@ -29,7 +46,11 @@ class Program
                     {
                         //Generamos posible solución con la nueva reina
                         List<(int, int)> nuevaCoords = new List<(int, int)>(solucionActual.Coords) { (filaActual + 1, columna) }; 
-                        vecinosPosibles.Add(new Solucion(nuevaCoords));
+                        Solucion nuevaSolucion = new Solucion(nuevaCoords);
+                        if (CalculoHeuristica(nuevaSolucion) == 0) // Agrega solo si no hay conflictos
+                        {
+                            vecinosPosibles.Add(nuevaSolucion);
+                        }
 
                     }
                 }
@@ -52,14 +73,14 @@ class Program
                 return true;
             }
 
-            /*Inicio de la busqueda con A*
+            //Inicio de la busqueda con A*
             AEstrella algoritmoAEstrella = new AEstrella();
-            Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, CalculoHeuristica);
-            */
-            //Inicio de Búsqueda en Profundidad
+            Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
+            
+            /*//Inicio de Búsqueda en Profundidad
             BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
             Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
-
+*/
 
             if (revisados > 1500 )
             {
