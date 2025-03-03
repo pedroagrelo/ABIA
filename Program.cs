@@ -24,22 +24,63 @@ class Program
             /// </summary>
             /// <param name="solucionActual">El estado actual del tablero con las reinas colocadas.</param>
             /// <returns>El valor de la heurística, que estima el costo restante para alcanzar una solución válida.</returns>
+            ///sumario feito para o anterior 
+
             
             int CalculoHeuristica(Solucion solucionActual) 
             {
-                int conflictos = 0;
+                int movimientosNecesarios = 0;
+
+                // Calcular movimientos necesarios para resolver conflictos
                 for (int i = 0; i < solucionActual.Coords.Count; i++)
                 {
                     (int filaI, int columnaI) = solucionActual.Coords[i];
-                    for (int j = i + 1; j < solucionActual.Coords.Count; j++)
+                    bool enConflicto = false;
+
+                    // Verificar si la reina está en conflicto
+                    for (int j = 0; j < solucionActual.Coords.Count; j++)
                     {
+                        if (i == j) continue; // No comparar la reina consigo misma
                         (int filaJ, int columnaJ) = solucionActual.Coords[j];
+
                         if (columnaJ == columnaI || Math.Abs(columnaJ - columnaI) == Math.Abs(filaJ - filaI))
-                            conflictos++;
+                        {
+                            enConflicto = true;
+                            break;
+                        }
+                    }
+
+                    // Si la reina está en conflicto, estimar movimientos necesarios
+                    if (enConflicto)
+                    {
+                        // Contar posiciones libres en la fila actual
+                        int posicionesLibres = 0;
+                        for (int columna = 0; columna < reinas; columna++)
+                        {
+                            bool posicionValida = true;
+                            for (int j = 0; j < solucionActual.Coords.Count; j++)
+                            {
+                                (int filaJ, int columnaJ) = solucionActual.Coords[j];
+                                if (columnaJ == columna || Math.Abs(columnaJ - columna) == Math.Abs(filaJ - filaI))
+                                {
+                                    posicionValida = false;
+                                    break;
+                                }
+                            }
+                            if (posicionValida) posicionesLibres++;
+                        }
+
+                        // Sumar movimientos necesarios
+                        movimientosNecesarios += (posicionesLibres > 0) ? 1 : 0; // Al menos un movimiento
                     }
                 }
-                return conflictos + (reinas - solucionActual.Coords.Count); // N numero de reinas tot, k = reinas colocadas 
-            }
+
+                // Sumar reinas faltantes
+                int reinasFaltantes = reinas - solucionActual.Coords.Count;
+            
+
+                return 15*movimientosNecesarios + reinasFaltantes; // N numero de reinas tot, k = reinas colocadas // * 2 a ver klk en avara 
+            } 
 
             List<Solucion> ObtenerVecinos(Solucion solucionActual) //Posibles posiciones de la siguiente reina
             {
@@ -75,8 +116,12 @@ class Program
             }
 
             //Inicio de la busqueda con A*
-            AEstrella algoritmoAEstrella = new AEstrella();
-            Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
+            //AEstrella algoritmoAEstrella = new AEstrella();
+            //Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
+
+            //Inicio de busqueda Avara. Coste 0 para la búsqueda avara
+            AEstrella algoritmoAvara = new AEstrella();
+            Solucion? solucionFinal = algoritmoAvara.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, (solucionActual, nuevaSolucion) => 0, out int revisados, CalculoHeuristica);
             
             ///Inicio de Búsqueda en Profundidad
             //BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
