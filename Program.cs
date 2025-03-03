@@ -17,23 +17,28 @@ class Program
 
             int CalculoCoste(Solucion solucionActual, Solucion nuevaSolucion) => 1; // Coste uniforme de 1 para cada movimiento
 
-            int CalculoHeuristica(Solucion solucionActual)
+            /// <summary>
+            /// Calcula una heurística que estima el número de conflictos potenciales basándose en la cantidad de reinas ya colocadas y su distribución.
+            /// La heurística suma el número de conflictos actuales entre reinas y el número de reinas faltantes por colocar.
+            /// Esto proporciona una estimación más informativa del costo restante para guiar la búsqueda de manera más eficiente.
+            /// </summary>
+            /// <param name="solucionActual">El estado actual del tablero con las reinas colocadas.</param>
+            /// <returns>El valor de la heurística, que estima el costo restante para alcanzar una solución válida.</returns>
+            
+            int CalculoHeuristica(Solucion solucionActual) 
             {
                 int conflictos = 0;
-                int[] tablero = solucionActual.ObtenerEstado();
-                int n = tablero.Length;
-
-                for (int i = 0; i < n; i++)
+                for (int i = 0; i < solucionActual.Coords.Count; i++)
                 {
-                    for (int j = i + 1; j < n; j++)
+                    (int filaI, int columnaI) = solucionActual.Coords[i];
+                    for (int j = i + 1; j < solucionActual.Coords.Count; j++)
                     {
-                        if (tablero[i] == tablero[j] || Math.Abs(tablero[i] - tablero[j]) == Math.Abs(i - j))
-                        {
+                        (int filaJ, int columnaJ) = solucionActual.Coords[j];
+                        if (columnaJ == columnaI || Math.Abs(columnaJ - columnaI) == Math.Abs(filaJ - filaI))
                             conflictos++;
-                        }
                     }
                 }
-                return conflictos;
+                return conflictos + (reinas - solucionActual.Coords.Count); // N numero de reinas tot, k = reinas colocadas 
             }
 
             List<Solucion> ObtenerVecinos(Solucion solucionActual) //Posibles posiciones de la siguiente reina
@@ -46,17 +51,13 @@ class Program
                     {
                         //Generamos posible solución con la nueva reina
                         List<(int, int)> nuevaCoords = new List<(int, int)>(solucionActual.Coords) { (filaActual + 1, columna) }; 
-                        Solucion nuevaSolucion = new Solucion(nuevaCoords);
-                        if (CalculoHeuristica(nuevaSolucion) == 0) // Agrega solo si no hay conflictos
-                        {
-                            vecinosPosibles.Add(nuevaSolucion);
-                        }
-
+                        Solucion nuevaSolucion = new Solucion(nuevaCoords);                      
+                        vecinosPosibles.Add(nuevaSolucion);
                     }
                 }
                 return vecinosPosibles;
             }
-
+            
             bool CriterioParada(Solucion solucionActual) //Verifica que la solución es correcta
             {
                 if (solucionActual.Coords.Count < reinas) return false; //Nº de reinas
@@ -73,13 +74,13 @@ class Program
                 return true;
             }
 
-            /*//Inicio de la busqueda con A*
+            //Inicio de la busqueda con A*
             AEstrella algoritmoAEstrella = new AEstrella();
             Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
             
-            *///Inicio de Búsqueda en Profundidad
-            BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
-            Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
+            ///Inicio de Búsqueda en Profundidad
+            //BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
+            //Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
 
 
             if (revisados > 1500 )
@@ -100,7 +101,5 @@ class Program
             }
             reinas ++;
         }
-
-
     }
 }
