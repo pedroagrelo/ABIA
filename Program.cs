@@ -38,7 +38,7 @@ class Program
                             conflictos++;
                     }
                 }
-                return conflictos*9 + (reinas - solucionActual.Coords.Count); // N numero de reinas tot, k = reinas colocadas 
+                return conflictos*9 + (reinas - solucionActual.Coords.Count); // N numero de reinas total, k = reinas colocadas 
             }
 
             List<Solucion> ObtenerVecinos(Solucion solucionActual) //Posibles posiciones de la siguiente reina
@@ -79,16 +79,16 @@ class Program
             //Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
 
              //Inicio de busqueda Avara. Coste 0 para la búsqueda avara
-            //AEstrella algoritmoAvara = new AEstrella();
-            //Solucion? solucionFinal = algoritmoAvara.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, (solucionActual, nuevaSolucion) => 0, out int revisados, CalculoHeuristica);
+            AEstrella algoritmoAvara = new AEstrella();
+            Solucion? solucionFinal = algoritmoAvara.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, (solucionActual, nuevaSolucion) => 0, out int revisados, CalculoHeuristica);
 
             //Inicio de busqueda Coste Uniforme. Heuristica 0 para la búsqueda coste Uniforme, que será como la busqueda en anchura 
             //AEstrella algoritmoUniforme = new AEstrella();
             //Solucion? solucionFinal = algoritmoUniforme.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados,(Solucion solucionActual) => 0 ); // null da o mesmo
 
             ///Inicio de Búsqueda en Anchura
-            BusquedaAnchura busquedaAnchura = new BusquedaAnchura();
-            Solucion? solucionFinal = busquedaAnchura.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
+            //BusquedaAnchura busquedaAnchura = new BusquedaAnchura();
+            //Solucion? solucionFinal = busquedaAnchura.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
 
             
             ///Inicio de Búsqueda en Profundidad

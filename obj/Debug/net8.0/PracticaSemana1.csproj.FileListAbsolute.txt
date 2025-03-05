@@ -28,3 +28,18 @@ d:\Escritorio\Carpeta Universidade\2024-2025\2C\ALGORITMOS BASICOS PARA IA\N_rei
 d:\Escritorio\Carpeta Universidade\2024-2025\2C\ALGORITMOS BASICOS PARA IA\N_reinas\Repositorio N_reinas\ABIA\obj\Debug\net8.0\PracticaSemana1.pdb
 D:\Escritorio\Carpeta Universidade\2024-2025\2C\ALGORITMOS BASICOS PARA IA\N_reinas\Repositorio N_reinas\ABIA\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
 D:\Escritorio\Carpeta Universidade\2024-2025\2C\ALGORITMOS BASICOS PARA IA\N_reinas\Repositorio N_reinas\ABIA\obj\Debug\net8.0\ref\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\bin\Debug\net8.0\PracticaSemana1.exe
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\bin\Debug\net8.0\PracticaSemana1.deps.json
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\bin\Debug\net8.0\PracticaSemana1.runtimeconfig.json
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\bin\Debug\net8.0\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\bin\Debug\net8.0\PracticaSemana1.pdb
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.GeneratedMSBuildEditorConfig.editorconfig
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.AssemblyInfoInputs.cache
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.AssemblyInfo.cs
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.csproj.CoreCompileInputs.cache
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.sourcelink.json
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\refint\PracticaSemana1.dll
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.pdb
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\PracticaSemana1.genruntimeconfig.cache
+D:\CopiaPedro\CLASE\2º\2ºcuatri\Algoritmos básicos de IA\repositorioPracticas\ABIA\obj\Debug\net8.0\ref\PracticaSemana1.dll

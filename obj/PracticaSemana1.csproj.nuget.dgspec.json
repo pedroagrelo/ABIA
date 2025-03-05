@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Escritorio\\Carpeta Universidade\\2024-2025\\2C\\ALGORITMOS BASICOS PARA IA\\N_reinas\\Repositorio N_reinas\\ABIA\\PracticaSemana1.csproj": {}
+    "D:\\CopiaPedro\\CLASE\\2º\\2ºcuatri\\Algoritmos básicos de IA\\repositorioPracticas\\ABIA\\PracticaSemana1.csproj": {}
   },
   "projects": {
-    "D:\\Escritorio\\Carpeta Universidade\\2024-2025\\2C\\ALGORITMOS BASICOS PARA IA\\N_reinas\\Repositorio N_reinas\\ABIA\\PracticaSemana1.csproj": {
+    "D:\\CopiaPedro\\CLASE\\2º\\2ºcuatri\\Algoritmos básicos de IA\\repositorioPracticas\\ABIA\\PracticaSemana1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Escritorio\\Carpeta Universidade\\2024-2025\\2C\\ALGORITMOS BASICOS PARA IA\\N_reinas\\Repositorio N_reinas\\ABIA\\PracticaSemana1.csproj",
+        "projectUniqueName": "D:\\CopiaPedro\\CLASE\\2º\\2ºcuatri\\Algoritmos básicos de IA\\repositorioPracticas\\ABIA\\PracticaSemana1.csproj",
         "projectName": "PracticaSemana1",
-        "projectPath": "D:\\Escritorio\\Carpeta Universidade\\2024-2025\\2C\\ALGORITMOS BASICOS PARA IA\\N_reinas\\Repositorio N_reinas\\ABIA\\PracticaSemana1.csproj",
-        "packagesPath": "C:\\Users\\hugog\\.nuget\\packages\\",
-        "outputPath": "D:\\Escritorio\\Carpeta Universidade\\2024-2025\\2C\\ALGORITMOS BASICOS PARA IA\\N_reinas\\Repositorio N_reinas\\ABIA\\obj\\",
+        "projectPath": "D:\\CopiaPedro\\CLASE\\2º\\2ºcuatri\\Algoritmos básicos de IA\\repositorioPracticas\\ABIA\\PracticaSemana1.csproj",
+        "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
+        "outputPath": "D:\\CopiaPedro\\CLASE\\2º\\2ºcuatri\\Algoritmos básicos de IA\\repositorioPracticas\\ABIA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hugog\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
