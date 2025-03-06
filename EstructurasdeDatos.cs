@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace PRACTICASEMANA1;
 
+/// <summary>
+/// Interfaz para gestionar una lista de soluciones candidatas con operaciones de añadir, borrar y obtener la siguiente solución.
+/// </summary>
 public interface IListaCandidatos
 {
     void Anhadir(Solucion solucion, int prioridad = 0);
@@ -13,17 +16,27 @@ public interface IListaCandidatos
     int Contar { get; } // cuenta soluciones de la cola
 }
 
+/// <summary>
+/// Implementación de una cola de prioridad para gestionar las soluciones candidatas.
+/// </summary>
 public class ColaDePrioridad : IListaCandidatos
 {
     private PriorityQueue<(Solucion solucion, string estado), int> cp; // cola de prioridad 
     private Dictionary<string, (Solucion solucion, string estado)> buscador; //diccionario para gestionar los estados
     private const string REMOVED = "<removed-task>"; // nodos eliminados
 
+    /// <summary>
+    /// Constructor que inicializa la cola de prioridad y el diccionario de búsqueda.
+    /// </summary>
     public ColaDePrioridad()
     {
         cp = new PriorityQueue<(Solucion, string), int>();
         buscador = new Dictionary<string, (Solucion, string)>();
     }
+
+    /// <summary>
+    /// Añade una solución a la cola de prioridad con su respectiva prioridad.
+    /// </summary>
 
     public void Anhadir(Solucion solucion, int prioridad = 0)
     {
@@ -50,6 +63,9 @@ public class ColaDePrioridad : IListaCandidatos
         }
     }
 
+    /// <summary>
+    /// Obtiene la siguiente solución activa de la cola de prioridad.
+    /// </summary>
     public Solucion ObtenerSiguiente()
     {
         while (cp.Count > 0)
@@ -64,7 +80,9 @@ public class ColaDePrioridad : IListaCandidatos
         throw new InvalidOperationException("No hay más soluciones en la cola.");
     }
 
-    // Comprueba si la cola tiene elementos activos 
+    /// <summary>
+    /// Devuelve el número de soluciones activas en la cola de prioridad.
+    /// </summary> 
     public int Contar 
     {
         get
@@ -113,5 +131,5 @@ public class ColaFIFO : IListaCandidatos
     public void Anhadir(Solucion solucion, int prioridad = 0) => cola.Enqueue(solucion);
     public Solucion ObtenerSiguiente() => cola.Dequeue();
     public int Contar => cola.Count;
-    public void Borrar(Solucion solucion) {} // no es nesario porque en una cola fifo no se eliminan elementos arbitrarios 
+    public void Borrar(Solucion solucion) {} // no es nesario porque en una cola  no se eliminan elementos arbitrarios 
 }

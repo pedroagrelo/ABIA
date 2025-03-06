@@ -5,7 +5,7 @@
 En la práctica de esta semana hemos implementado nuevo modelos de búsqueda no informada para resolver el problema de las n reinas, Búsqueda Avara, Coste Uniforme y una modificación de A*.
 
 ## 2. Implementación de A*
-Para mejorar el comportamiento del algoritmo de A* hemos modificado CalculoHeuristica para que se penalicen los conflictos entre reinas.
+Para mejorar el comportamiento del algoritmo de A* hemos modificado CalculoHeuristica para que se penalicen los conflictos entre reinas y se minimicen las reinas faltantes por colocar. 
 ## **Funcionamiento**
 
 ### **1. Cálculo de Conflictos**
@@ -27,7 +27,9 @@ Recorre todas las reinas y cuenta conflictos si están en la misma columna o dia
 ```csharp
 return conflictos * 9 + (reinas - solucionActual.Coords.Count);
 ```
-Multiplica los conflictos por 9 para penalizarlos fuertemente y suma las reinas faltantes para favorecer soluciones más completas.
+Multiplica los conflictos por 9 para penalizarlos fuertemente y suma las reinas faltantes para favorecer soluciones más completas.El valor del escalar 9 se obtuvo empíricamente al ejecutar el algoritmo de búsqueda avara, ya que al no necesitar ser admisible, nos focalizamos en darle más peso a la parte que más mejora la heurística: la correspondiente a los conflictos.
+Al obtener los resultados que mostramos más adelante, decidimos dejar este escalar en nuestra heurística debido a que, aunque cambiemos de algoritmo a ejecutar (en este caso, A*), los resultados no se veían afectados por este escalar. Esto se debe a que el límite de 1500 nodos evaluados evita que la inadmisibilidad de la heurística se convierta en un problema.
+
 
 ### 2.3 Resultados de A*
 
@@ -62,7 +64,7 @@ Para ejecutar la búsqueda de Coste Uniforme hemos utilizado el algoritmo A*, pe
 
 ### 4.1 Explicación del Algoritmo
 
-Para implementar la Búsqueda Avara hemos usado la heurística de A*, pero estableciendo el coste en 0, para que se escojiese siempre la solución mas prometedora ignorando el coste.
+Para implementar la Búsqueda Avara hemos usado la heurística de A*, pero estableciendo el coste en 0, para que se escojiesen las soluciones siempre ignorando el coste.
 
 ### 4.2 Resultados de Búsqueda Avara
 
@@ -85,6 +87,8 @@ Para implementar la Búsqueda Avara hemos usado la heurística de A*, pero estab
 
 
 ## 5. Conclusiones
-1. Búsqueda Avara usa solo la heurística h(n), eligiendo el nodo que parece mejor sin considerar el costo acumulado. Es rápida y evalúa menos nodos, pero puede no encontrar la mejor solución.
-2. Búsqueda de Costo Uniforme usa solo el costo acumulado g(n), asegurando la solución óptima pero explorando muchos nodos, lo que la hace más lenta.
-3. A* combina ambas (f(n) = g(n) + h(n)), balanceando exploración y eficiencia.
+1. Búsqueda Avara usa solo la heurística h(n), eligiendo el nodo que parece mejor sin considerar el costo acumulado. Es rápida y evalúa menos nodos, pero puede no encontrar la mejor solución y es a tener en cuenta que aunque  acelere la búsqueda puede caer en caminos erróneos porque solo sigue la heurística sin evaluar los costes reales.La búsqueda avara no garantiza optimalidad pero para este problema nos sirve ya que con que cumpla los criterios de parada será una solución válida
+2. Búsqueda de Costo Uniforme usa solo el costo acumulado g(n), algoritmo que halla la solución óptima, pero explorando muchos nodos, lo que la hace segura pero más lenta.
+3. A* combina ambas (f(n) = g(n) + h(n)), balanceando exploración y eficiencia. 
+4. El límite de 1500 nodos evaluados es una restricción práctica que evita que la inadmisibilidad de la heurística cause problemas en la mayoría de los casos. Sin embargo, para problemas más grandes o sin límite de nodos, sería recomendable utilizar una heurística admisible.
+5. El algoritmo A* podría mejorar significativamente si se pudiera violar la restricción de no modificar mas funciones que las admitidas y se pudieran evaluar los estados más prometedores. Por ejemplo, podríamos implementar una poda de conflictos en la generación de vecinos, evitando generar estados con conflictos obvios. Esto reduciría el espacio de búsqueda y permitiría que A* aproveche mejor la heurística, combinando de manera más efectiva el coste acumulado y la información proporcionada por la heurística. 
