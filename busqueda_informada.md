@@ -5,7 +5,7 @@
 En la práctica de esta semana hemos implementado nuevo modelos de búsqueda no informada para resolver el problema de las n reinas, Búsqueda Avara, Coste Uniforme y una modificación de A*.
 
 ## 2. Implementación de A*
-Para mejorar el comportamiento del algoritmo de A* hemos modificado CalculoHeuristica para que se penalicen los conflictos entre reinas y se minimicen las reinas faltantes por colocar. 
+Para mejorar el comportamiento del algoritmo de A* hemos modificado CalculoHeuristica para que se penalicen los conflictos entre reinas y se minimicen las reinas faltantes por colocar. A continuación desglosamos la implementación final después de probar y comparar entre varias posibilidades. 
 ## **Funcionamiento**
 
 ### **1. Cálculo de Conflictos**
