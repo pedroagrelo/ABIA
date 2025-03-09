@@ -57,9 +57,13 @@ public class ColaDePrioridad : IListaCandidatos
             (Solucion solucion, string estado) = cp.Dequeue(); // extrae elemento de menor prioridad 
             if (estado != REMOVED && buscador.ContainsKey(solucion.ToString()))  // si no está REMOVED y está en el diccionario
             {
-                buscador.Remove(solucion.ToString()); // elimina solucion del diccionario 
-                return solucion;
+                buscador.Remove(solucion.ToString());
+                if (solucion.EsConsistente()) // elimina solucion del diccionario 
+                {    
+                    return solucion;
+                }
             }
+
         }
         throw new InvalidOperationException("No hay más soluciones en la cola.");
     }
@@ -95,7 +99,17 @@ public class PiladeCandidatos : IListaCandidatos
     }
     public Solucion ObtenerSiguiente()
     {
-        return pila.Pop();
+        while (pila.Count > 0)
+        {
+            Solucion solucion = pila.Pop();
+
+            // ✅ Si es consistente, lo devuelve
+            if (solucion.EsConsistente())
+            {
+                return solucion;
+            }
+        }
+        throw new InvalidOperationException("No hay más soluciones en la pila.");
     }
     public int Contar
     {
@@ -111,7 +125,21 @@ public class ColaFIFO : IListaCandidatos
     private Queue<Solucion> cola = new Queue<Solucion>();
 
     public void Anhadir(Solucion solucion, int prioridad = 0) => cola.Enqueue(solucion);
-    public Solucion ObtenerSiguiente() => cola.Dequeue();
+    // public Solucion ObtenerSiguiente() => cola.Dequeue();
+    public Solucion ObtenerSiguiente()
+    {
+        while (cola.Count > 0)
+        {
+            Solucion solucion = cola.Dequeue();
+            
+            // ✅ Si es consistente, se devuelve
+            if (solucion.EsConsistente())
+            {
+                return solucion;
+            }
+        }
+        throw new InvalidOperationException("No hay más soluciones en la cola.");
+    }
     public int Contar => cola.Count;
     public void Borrar(Solucion solucion) {} // no es nesario porque en una cola fifo no se eliminan elementos arbitrarios 
 }
