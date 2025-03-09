@@ -2,20 +2,41 @@ using System;
 using System.Collections.Generic;
 namespace PRACTICASEMANA1;
 
-// Clase abstracta que define la estructura básica para un algoritmo de búsqueda
+/// <summary>
+/// Clase abstracta que define la estructura básica para un algoritmo de búsqueda.
+/// Contiene métodos para calcular la prioridad y ejecutar la búsqueda.
+/// </summary>
 public abstract class AlgoritmoDeBusqueda
 {
     protected IListaCandidatos ListaCandidatos;
 
+    
+    /// <summary>
+    /// Constructor que inicializa el algoritmo de búsqueda con una lista de candidatos.
+    /// </summary>
     public AlgoritmoDeBusqueda(IListaCandidatos lista)
     {
         ListaCandidatos = lista;
     }
 
-    //Cálculo de la prioridad de un nodo según su coste y heuristica
+    /// <summary>
+    /// Calcula la prioridad de un nodo de búsqueda utilizando su coste y una heurística.
+    /// </summary>
+    /// <param name="nodoInfo">El nodo cuya prioridad se calcula.</param>
+    /// <param name="calculoHeuristica">Función heurística opcional.</param>
+    /// <returns>Un valor entero representando la prioridad del nodo.</returns>
+
     public abstract int CalculoDePrioridad(Solucion nodoInfo, Func<Solucion, int>? calculoHeuristica = null); 
 
-    //Método de búsqueda general
+    /// <summary>
+    /// Método que implementa la búsqueda general.
+    /// </summary>
+    /// <param name="solucionInicial">Estado inicial de la búsqueda.</param>
+    /// <param name="criterioParada">Función que determina si se ha alcanzado el objetivo.</param>
+    /// <param name="obtenerVecinos">Función que genera los vecinos de un nodo.</param>
+    /// <param name="calculoCoste">Función que calcula el coste entre dos soluciones.</param>
+    /// <param name="calculoHeuristica">Función heurística opcional.</param>
+    /// <returns>La solución encontrada o null si no existe solución.</returns>
     public Solucion? Busqueda(Solucion solucionInicial, Func<Solucion, bool> criterioParada,
                                Func<Solucion, List<Solucion>> obtenerVecinos, Func<Solucion, Solucion, int> calculoCoste,
                                out int revisados,Func<Solucion, int>? calculoHeuristica = null) 
@@ -51,10 +72,23 @@ public abstract class AlgoritmoDeBusqueda
     }
 }
 
-
+/// <summary>
+/// Implementación del algoritmo A* que hereda de AlgoritmoDeBusqueda.
+/// Utiliza una cola de prioridad para explorar los nodos de manera óptima.
+/// </summary>
 public class AEstrella : AlgoritmoDeBusqueda
 {
-    public AEstrella() : base(new ColaDePrioridad()) {} // Inicializamos con cola de prioridad vacia
+    /// <summary>
+    /// Constructor que inicializa el algoritmo A* con una cola de prioridad vacía.
+    /// </summary>
+    public AEstrella() : base(new ColaDePrioridad()) {}
+
+    /// <summary>
+    /// Calcula la prioridad de un nodo para el algoritmo A*, sumando el coste acumulado y la heurística si existe.
+    /// </summary>
+    /// <param name="nodoInfo">El nodo que se evalúa.</param>
+    /// <param name="calculoHeuristica">Función heurística opcional.</param>
+    /// <returns>Un valor entero representando la prioridad del nodo.</returns>
     public override int CalculoDePrioridad(Solucion nodoInfo, Func<Solucion, int>? calculoHeuristica = null)
     {
         // Si no se proporciona una heurística, solo devuelve el coste
@@ -68,9 +102,23 @@ public class AEstrella : AlgoritmoDeBusqueda
 
 }
 
+/// <summary>
+/// Implementación de la búsqueda en profundidad (DFS), que expande nodos en orden LIFO 
+/// Este algoritmo no utiliza una heurística, por lo que la prioridad de los nodos siempre es 0.
+/// </summary>
 public class BusquedaEnProfundidad : AlgoritmoDeBusqueda
 {
-    public BusquedaEnProfundidad() : base(new PiladeCandidatos()) {} // Inicializamos busqueda en profundidad con pila vacía
+    /// <summary>
+    /// Constructor que inicializa la búsqueda en profundidad con una pila vacía.
+    /// </summary>
+    public BusquedaEnProfundidad() : base(new PiladeCandidatos()) {} 
+
+    /// <summary>
+    /// Calcula la prioridad de un nodo en la búsqueda en profundidad.
+    /// </summary>
+    /// <param name="nodoInfo">El nodo cuya prioridad se calcula.</param>
+    /// <param name="calculoHeuristica">Función heurística opcional (no utilizada en la búsqueda en profundidad).</param>
+    /// <returns>Siempre devuelve 0, ya que la búsqueda en profundidad no utiliza una heurística.</returns>
     public override int CalculoDePrioridad(Solucion nodoInfo, Func<Solucion, int>? calculoHeuristica = null)
     {
         return 0; // En Búqueda en profundidad no hay heurística 

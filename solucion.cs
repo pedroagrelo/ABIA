@@ -5,26 +5,37 @@ using System.Linq;
 
 namespace PRACTICASEMANA1;
 
-
-public class Solucion : IComparable<Solucion> 
+/// <summary>
+/// Representa una solución para el problema de las N reinas, incluyendo las coordenadas de las reinas y el coste asociado.
+/// </summary>
+public class Solucion : IComparable<Solucion> // Clase Solucion que implementa la interfaz IComparables
 {
 
-    public List<(int fila, int columna)> Coords { get; set; } 
-    public int Coste { get; set; }  
+    public List<(int fila, int columna)> Coords { get; set; } // Lista de posiciones de las Reinas
+    public int Coste { get; set; }  //coste acumulado de la solucion
 
     public Solucion(List<(int fila, int columna)> coords) : this(coords, 0) {} 
 
+    /// <summary>
+    /// Constructor que inicializa una solución con coordenadas y coste específicos del problema .
+    /// </summary>
     public Solucion(List<(int fila, int columna)> coords, int coste = 0)  
     {
         Coords = new List<(int fila, int columna)>(coords);
         Coste = coste;
     } 
 
+    /// <summary>
+    /// Compara esta solución con otra según su coste.
+    /// </summary>
     public int CompareTo(Solucion otra)
     {
         return Coste.CompareTo(otra.Coste);
     }
 
+    /// <summary>
+    /// Determina si dos soluciones son iguales comparando sus coordenadas.
+    /// </summary>
     public override bool Equals(object obj)
     {
         if (obj is Solucion otra)
@@ -32,11 +43,17 @@ public class Solucion : IComparable<Solucion>
         return false;
     }
 
+    /// <summary>
+    /// Devuelve un código hash para esta solución basado en sus coordenadas.
+    /// </summary>
     public override int GetHashCode()
     {
         return string.Join("-", Coords).GetHashCode();
     }
 
+    /// <summary>
+    /// Representa esta solución como una cadena de texto con las coordenadas de las reinas.
+    /// </summary>   
     public override string ToString()
     {
         return string.Join("-", Coords.Select(c => $"({c.fila}, {c.columna})"));

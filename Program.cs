@@ -15,7 +15,10 @@ class Program
             // Solucion inicial, nueva lista vacía sin ninguna reina 
             List<(int fila, int columna)> solucionInicial = new List<(int, int)>(); 
 
-            int CalculoCoste(Solucion solucionActual, Solucion nuevaSolucion) => 1; // Coste uniforme de 1 para cada movimiento
+            /// <summary>
+            /// Función que devuelve un coste uniforme de 1 para cada movimiento.
+            /// </summary>
+            int CalculoCoste(Solucion solucionActual, Solucion nuevaSolucion) => 1; 
 
             /// <summary>
             /// Calcula una heurística que estima el número de conflictos potenciales basándose en la cantidad de reinas ya colocadas y su distribución.
@@ -41,11 +44,14 @@ class Program
                 return conflictos*9 + (reinas - solucionActual.Coords.Count); // N numero de reinas total, k = reinas colocadas 
             }
 
+            /// <summary>
+            /// Genera una lista de soluciones vecinas añadiendo una nueva reina en cada columna de la siguiente fila.
+            /// </summary>
             List<Solucion> ObtenerVecinos(Solucion solucionActual) //Posibles posiciones de la siguiente reina
             {
                 int filaActual = solucionActual.Coords.Count > 0 ? solucionActual.Coords[^1].fila : -1;
                 List<Solucion> vecinosPosibles = new List<Solucion>();
-                if (filaActual + 1 < reinas)
+                if (filaActual + 1 < reinas) // si todavía no se han colocado todas las reinas 
                 {
                     for (int columna = 0; columna < reinas; columna++)
                     {
@@ -58,25 +64,28 @@ class Program
                 return vecinosPosibles;
             }
             
+            /// <summary>
+            /// Verifica si la solución actual cumple con el criterio de parada (todas las reinas colocadas sin conflictos).
+            /// </summary>
             bool CriterioParada(Solucion solucionActual) //Verifica que la solución es correcta
             {
                 if (solucionActual.Coords.Count < reinas) return false; //Nº de reinas
                 for (int i = 0; i < solucionActual.Coords.Count; i++)
                 {
-                    (int filaI, int columnaI) = solucionActual.Coords[i];
+                    (int filaI, int columnaI) = solucionActual.Coords[i]; // coordenadas de la reina en i
                     for (int j = i + 1; j < solucionActual.Coords.Count; j++)
                     {
-                        (int filaJ, int columnaJ) = solucionActual.Coords[j];
+                        (int filaJ, int columnaJ) = solucionActual.Coords[j]; // coordenadas de la reina en j
                         if (columnaJ == columnaI || Math.Abs(columnaJ - columnaI) == Math.Abs(filaJ - filaI))
                             return false; //Amenazas entre reinas, si estan en la misma columna o la misma diagonal
                     }
                 }
-                return true;
+                return true; // sin conflictos 
             }
 
             //Inicio de la busqueda con A*
-            //AEstrella algoritmoAEstrella = new AEstrella();
-            //Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
+            AEstrella algoritmoAEstrella = new AEstrella();
+            Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
 
              //Inicio de busqueda Avara. Coste 0 para la búsqueda avara
             // AEstrella algoritmoAvara = new AEstrella();
