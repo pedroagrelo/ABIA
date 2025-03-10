@@ -57,8 +57,12 @@ class Program
                     {
                         //Generamos posible solución con la nueva reina
                         List<(int, int)> nuevaCoords = new List<(int, int)>(solucionActual.Coords) { (filaActual + 1, columna) }; 
-                        Solucion nuevaSolucion = new Solucion(nuevaCoords);                      
-                        vecinosPosibles.Add(nuevaSolucion);
+                        Solucion nuevaSolucion = new Solucion(nuevaCoords);
+                        if (nuevaSolucion.EsConsistente())
+                        {
+                            vecinosPosibles.Add(nuevaSolucion); // Añadimos solo soluciones consistentes 
+                        }                      
+                        
                     }
                 }
                 return vecinosPosibles;
@@ -87,7 +91,7 @@ class Program
             AEstrella algoritmoAEstrella = new AEstrella();
             Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
 
-             //Inicio de busqueda Avara. Coste 0 para la búsqueda avara
+            //Inicio de busqueda Avara. Coste 0 para la búsqueda avara
             //AEstrella algoritmoAvara = new AEstrella();
             //Solucion? solucionFinal = algoritmoAvara.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, (solucionActual, nuevaSolucion) => 0, out int revisados, CalculoHeuristica);
 

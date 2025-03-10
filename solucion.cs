@@ -58,4 +58,25 @@ public class Solucion : IComparable<Solucion> // Clase Solucion que implementa l
     {
         return string.Join("-", Coords.Select(c => $"({c.fila}, {c.columna})"));
     }
+
+        // Método para verificar si el estado es consistente
+    public bool EsConsistente()
+    {
+        int n = Coords.Count;
+        for (int i = 0; i < n; i++)
+        {
+            (int filaI, int columnaI) = Coords[i];
+            for (int j = i + 1; j < n; j++)
+            {
+                (int filaJ, int columnaJ) = Coords[j];
+                
+                // Conflicto en columnas
+                if (columnaI == columnaJ) return false;
+                
+                // Conflicto en diagonales
+                if (Math.Abs(filaI - filaJ) == Math.Abs(columnaI - columnaJ)) return false;
+            }
+        }
+        return true;
+    }
 }
