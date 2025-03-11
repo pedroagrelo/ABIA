@@ -52,9 +52,11 @@ class Program
             {
                 List<Solucion> vecinosPosibles = new List<Solucion>();
 
-                int filaActual = -1;
+                 // Encontrar la primera fila vacía, donde no haya una reina colocada
+                int filaActual = -1; // flag para disponibilidad de filas
                 for (int i = 0; i < reinas; i++)
                 {
+                    // Si la fila `i` no contiene una reina en `solucionActual.Coords`, la seleccionamos como la siguiente fila vacía
                     if (!solucionActual.Coords.Any(coord => coord.fila == i))
                     {
                         filaActual = i;
@@ -122,16 +124,16 @@ class Program
 
             //Inicio de busqueda Coste Uniforme. Heuristica 0 para la búsqueda coste Uniforme, que será como la busqueda en anchura 
             //AEstrella algoritmoUniforme = new AEstrella();
-            //Solucion? solucionFinal = algoritmoUniforme.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados,(Solucion solucionActual) => 0 ); // null da o mesmo
+            //Solucion? solucionFinal = algoritmoUniforme.Busqueda(solucionInicial, CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados,(Solucion solucionActual) => 0 ); // null da o mesmo
 
             ///Inicio de Búsqueda en Anchura
             //BusquedaAnchura busquedaAnchura = new BusquedaAnchura();
-            //Solucion? solucionFinal = busquedaAnchura.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
+            //Solucion? solucionFinal = busquedaAnchura.Busqueda(solucionInicial, CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
 
             
             ///Inicio de Búsqueda en Profundidad
             //BusquedaEnProfundidad busquedaEnProfundidad = new BusquedaEnProfundidad();
-            //Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
+            //Solucion? solucionFinal = busquedaEnProfundidad.Busqueda(solucionInicial, CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, null);
 
 
             if (revisados > 1500 )
