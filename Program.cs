@@ -13,7 +13,8 @@ class Program
         {
             Console.WriteLine($"N = {reinas}  reinas");
             // Solucion inicial, nueva lista vacía sin ninguna reina 
-            List<(int fila, int columna)> solucionInicial = new List<(int, int)>(); 
+            List<(int fila, int columna)> reinasPrefijadas = new List<(int, int)> {(0,3), (2,4)};
+            Solucion solucionInicial  = new Solucion(reinasPrefijadas);  
 
             /// <summary>
             /// Función que devuelve un coste uniforme de 1 para cada movimiento.
@@ -49,24 +50,48 @@ class Program
             /// </summary>
             List<Solucion> ObtenerVecinos(Solucion solucionActual) //Posibles posiciones de la siguiente reina
             {
-                int filaActual = solucionActual.Coords.Count > 0 ? solucionActual.Coords[^1].fila : -1;
                 List<Solucion> vecinosPosibles = new List<Solucion>();
-                if (filaActual + 1 < reinas) // si todavía no se han colocado todas las reinas 
+
+                int filaActual = -1;
+                for (int i = 0; i < reinas; i++)
                 {
-                    for (int columna = 0; columna < reinas; columna++)
+                    if (!solucionActual.Coords.Any(coord => coord.fila == i))
                     {
-                        //Generamos posible solución con la nueva reina
-                        List<(int, int)> nuevaCoords = new List<(int, int)>(solucionActual.Coords) { (filaActual + 1, columna) }; 
-                        Solucion nuevaSolucion = new Solucion(nuevaCoords);
-                        if (nuevaSolucion.EsConsistente())
-                        {
-                            vecinosPosibles.Add(nuevaSolucion); // Añadimos solo soluciones consistentes 
-                        }                      
-                        
+                        filaActual = i;
+                        break;
                     }
                 }
+                // si no hay filas disponibles, no hay vecinos posibles
+                if ( filaActual == -1)
+                {
+                    return vecinosPosibles;
+                }
+                
+                // Genera vecinos añadiendo una reina en cada columna de la fila disponible
+                for (int columna = 0; columna < reinas; columna++)
+                {
+                    // Verifica si la posición (filaActual, columna) no está ocupada por una reina prefijada
+                    if (!solucionActual.Coords.Any(coord => coord.fila == filaActual && coord.columna == columna))
+                    {
+                        // Genera una nueva solución con la reina añadida en (filaActual, columna)
+                        List<(int,int)> nuevaCoords = new List<(int,int)>(solucionActual.Coords)
+                        {
+                            (filaActual, columna)
+                        };
+
+                        Solucion nuevaSolucion = new Solucion(nuevaCoords);
+
+                        if (nuevaSolucion.EsConsistente())
+                        {
+                            vecinosPosibles.Add(nuevaSolucion);
+                        }  
+                    }     
+                }
+
                 return vecinosPosibles;
             }
+                
+            
             
             /// <summary>
             /// Verifica si la solución actual cumple con el criterio de parada (todas las reinas colocadas sin conflictos).
@@ -89,11 +114,11 @@ class Program
 
             //Inicio de la busqueda con A*
             AEstrella algoritmoAEstrella = new AEstrella();
-            Solucion? solucionFinal = algoritmoAEstrella.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
+            Solucion? solucionFinal = algoritmoAEstrella.Busqueda(solucionInicial, CriterioParada, ObtenerVecinos, CalculoCoste, out int revisados, CalculoHeuristica);
 
             //Inicio de busqueda Avara. Coste 0 para la búsqueda avara
             //AEstrella algoritmoAvara = new AEstrella();
-            //Solucion? solucionFinal = algoritmoAvara.Busqueda(new Solucion(solucionInicial), CriterioParada, ObtenerVecinos, (solucionActual, nuevaSolucion) => 0, out int revisados, CalculoHeuristica);
+            //Solucion? solucionFinal = algoritmoAvara.Busqueda(solucionInicial, CriterioParada, ObtenerVecinos, (solucionActual, nuevaSolucion) => 0, out int revisados, CalculoHeuristica);
 
             //Inicio de busqueda Coste Uniforme. Heuristica 0 para la búsqueda coste Uniforme, que será como la busqueda en anchura 
             //AEstrella algoritmoUniforme = new AEstrella();
