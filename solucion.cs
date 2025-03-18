@@ -58,7 +58,12 @@ public class Solucion : IComparable<Solucion> // Clase Solucion que implementa l
     {
         return string.Join("-", Coords.Select(c => $"({c.fila}, {c.columna})"));
     }
+<<<<<<< HEAD
     // Método para verificar si el estado es consistente
+=======
+
+        // Método para verificar si el estado es consistente
+>>>>>>> 98aada34f102d5d23e512692243f39f9281fed39
     public bool EsConsistente()
     {
         int n = Coords.Count;
